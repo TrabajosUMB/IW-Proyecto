@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Sip&Go</title>
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</html>
+
+<body>
+    <div id="pageInicio" style="padding-top: 100px;">
+
+        <!--Header-->
+        <div id="headerBarraSuperior" class="fixed-header" style="margin-top: 0px;">
+            <header id="header">
+                <div class="wrapper">
+                    <div id="site-logo">
+                        <a href="index.html" title="Sip&Go">
+                            <img src="img//inicio/logo.png" alt="Logo pagina">
+                        </a>
+                    </div>
+                    <div class="nav-links">
+                        <nav>
+                            <ul class="d-flex">
+                                <li class="link-header">
+                                    <a href="page.html">Categorias</a>
+                                </li>
+                                <li class="link-header">
+                                    <a href="#ofertas">Ofertas</a>
+                                </li>
+                                <li class="link-header">
+                                    <a href="#sugerencias">Sugerencias</a>
+                                </li>
+                                <li class="link-header">
+                                    <a href="carrito.html">Carrito</a>
+                                </li>
+                                <li class="link-header">
+                                    <a href="login.html">Login</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+
+        </div>
+
+        <!--Portada-->
+        <div class="portada">
+            <div class="header_texto">
+                <h2 class="no-margin text-start">Sip&Go</h2>
+                <div class="no-margin- border-title"></div>
+                <p class="no-margin text-start description-title" style="margin-top: 20px;">
+                    Ven y disfruta de nuestros productos de alta calidad...
+                </p>
+                <p class="no-margin text-start description-title">
+                    Para que te pases un buen rato.
+                </p>
+            </div>
+        </div>
+
+        <!--Nuestras ofertas del dia-->
+        <main id="ofertas">
+            <h2 class="centrar-texto">Nuestras ofertas del dia</h2>
+            <div class="bg-gray section-ofertas">
+
+                <!-- Componente Poker -->
+                <div class="oferta-ind">
+                    <div>
+                        <img class="img-producto" src="img/productos/poker.png" alt="poker">
+                    </div>
+                    <div>
+                        <span class="txt-base-carousel--discount ml-1">-15%</span>
+                        <span class="txt-base-carousel--discount ml-1">Cerveza de Temporada</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <span class="ml-1 title-producto">Poker Lager 330ml</span>
+                    </div>
+                    <div class="ml-1" style="margin-top: 8px;">
+                        <div class="txt-base-carousel-section-price ml-2">Cop/ 2.975
+                            <label class="txt-base-carousel-section-price txt-base-carousel-section-price--dscto">Cop/ 3.500</label>
+                        </div>
+                    </div>
+                    <div class="float-right mr-2 mt-5">
+                        <button onclick="addToCart('Poker Lager 330ml', 2975, 'img/productos/poker.png')" class="boton-small boton--primario">Agregar</button>
+                    </div>
+                </div>
+                <!-- Componente Aguila -->
+                <div class="oferta-ind">
+                    <div>
+                        <img class="img-producto" src="img/productos/AGUILA.png" alt="aguila">
+                    </div>
+                    <div>
+                        <span class="txt-base-carousel--discount ml-1">-15%</span>
+                        <span class="txt-base-carousel--discount ml-1">Cerveza de Temporada</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <span class="ml-1 title-producto">Aguila 330ml</span>
+                    </div>
+                    <div class="ml-1" style="margin-top: 8px;">
+                        <div class="txt-base-carousel-section-price ml-2">Cop/ 3.400
+                            <label class="txt-base-carousel-section-price txt-base-carousel-section-price--dscto">Cop/ 4.000</label>
+                        </div>
+                    </div>
+                    <div class="float-right mr-2 mt-5">
+                        <button onclick="addToCart('Aguila 330ml', 3400, 'img/productos/AGUILA.png')" class="boton-small boton--primario">Agregar</button>
+                    </div>
+                </div>
+                <!-- Componente Costeñas -->
+                <div class="oferta-ind">
+                    <div>
+                        <img class="img-producto" src="img/productos/costeña.png" alt="costeña">
+                    </div>
+                    <div>
+                        <span class="txt-base-carousel--discount ml-1">-15%</span>
+                        <span class="txt-base-carousel--discount ml-1">Cerveza de Temporada</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <span class="ml-1 title-producto">Costeña Lager 330ml</span>
+                    </div>
+                    <div class="ml-1" style="margin-top: 8px;">
+                        <div class="txt-base-carousel-section-price ml-2">Cop/ 1.750
+                            <label class="txt-base-carousel-section-price txt-base-carousel-section-price--dscto">Cop/ 2.000</label>
+                        </div>
+                    </div>
+                    <div class="float-right mr-2 mt-5">
+                        <button onclick="addToCart('Costeña Lager 330ml', 1750, 'img/productos/costeña.png')" class="boton-small boton--primario">Agregar</button>
+                    </div>
+                </div>
+                <!-- Componente Budweiser -->
+                <div class="oferta-ind">
+                    <div>
+                        <img class="img-producto" src="img/productos/budweiser.png" alt="budweiser">
+                    </div>
+                    <div>
+                        <span class="txt-base-carousel--discount ml-1">-15%</span>
+                        <span class="txt-base-carousel--discount ml-1">Cerveza Deluxe</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <span class="ml-1 title-producto">Budweiser Lager 330ml</span>
+                    </div>
+                    <div class="ml-1" style="margin-top: 8px;">
+                        <div class="txt-base-carousel-section-price ml-2">Cop/ 4.675
+                            <label class="txt-base-carousel-section-price txt-base-carousel-section-price--dscto">Cop/ 5.500</label>
+                        </div>
+                    </div>
+                    <div class="float-right mr-2 mt-5">
+                        <button onclick="addToCart('Budweiser Lager 330ml', 4675, 'img/productos/budweiser.png')" class="boton-small boton--primario">Agregar</button>
+                    </div>
+                </div>
+                <!-- Componente Corona -->
+                <div class="oferta-ind">
+                    <div>
+                        <img class="img-producto" src="img/productos/corona.png" alt="corona">
+                    </div>
+                    <div>
+                        <span class="txt-base-carousel--discount ml-1">-15%</span>
+                        <span class="txt-base-carousel--discount ml-1">Cerveza Deluxe</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <span class="ml-1 title-producto">Corona Lager 330ml</span>
+                    </div>
+                    <div class="ml-1" style="margin-top: 8px;">
+                        <div class="txt-base-carousel-section-price ml-2">Cop/ 4.675
+                            <label class="txt-base-carousel-section-price txt-base-carousel-section-price--dscto">Cop/ 5.500</label>
+                        </div>
+                    </div>
+                    <div class="float-right mr-2 mt-5">
+                        <button onclick="addToCart('Corona Lager 330ml', 4675, 'img/productos/corona.png')" class="boton-small boton--primario">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--Categorias-->
+        <section class="contenedor">
+            <h2 class="centrar-texto">Categorías</h2>
+            <div class="categorias-grid">
+                <!-- Componente Cerveza -->
+                <div class="categoria-card">
+                    <img class="img-categoria" src="img/categorias/logo_cerveza.png" alt="Cerveza">
+                    <h3>Cerveza</h3>
+                </div>
+                <!-- Componente Aguardiente -->
+                <div class="categoria-card">
+                    <img class="img-categoria" src="img/categorias/logo_aguardiente.png" alt="Aguardiente">
+                    <h3>Aguardiente</h3>
+                </div>
+                <!-- Componente Whisky -->
+                <div class="categoria-card">
+                    <img class="img-categoria" src="img/categorias/logo_whisky.png" alt="Whisky">
+                    <h3>Whisky</h3>
+                </div>
+                <!-- Componente Vino -->
+                <div class="categoria-card">
+                    <img class="img-categoria" src="img/categorias/logo_vino.png" alt="Vino">
+                    <h3>Vino</h3>
+                </div>
+                <!-- Componente Licores -->
+                <div class="categoria-card">
+                    <img class="img-categoria" src="img/categorias/logo_otros.png" alt="Licores">
+                    <h3>Licores</h3>
+                </div>
+            </div>
+        </section>
+
+        <!--Ayudanos a mejorar-->
+        <section id="sugerencias" class="contenedor contacto">
+            <h3 class="centrar-texto">Ayúdanos a mejorar</h3>
+            <div class="contacto-bg"></div>
+            <form class="formulario">
+                <div class="campo">
+                    <label class="campo_label" for="nombre">Nombre</label>
+                    <input type="text" class="campo_field" placeholder="Tu nombre completo" id="nombre" required>
+                </div>
+                <div class="campo">
+                    <label class="campo_label" for="email">Email</label>
+                    <input type="email" class="campo_field" placeholder="Tu email" id="email" required>
+                </div>
+                <div class="campo">
+                    <label class="campo_label" for="asunto">Asunto</label>
+                    <input type="text" class="campo_field" placeholder="Escribe el asunto" id="asunto" required>
+                </div>
+                <div class="campo">
+                    <label class="campo_label" for="mensaje">Mensaje</label>
+                    <textarea class="campo_field campo__field--textarea" id="mensaje" placeholder="Tu mensaje" required></textarea>
+                </div>
+                <div class="campo">
+                    <button type="submit" class="boton">Enviar</button>
+                </div>
+            </form>
+        </section>
+
+        <!--Footer-->
+        <div id="footerBarraInferior " class="footer-basic ">
+            <footer>
+                <div class="social ">
+                    <a href=" "><i class="icon icon-color ion-social-linkedin "></i></a>
+                    <a href=" "><i class="icon icon-color ion-social-twitter "></i></a>
+                    <a href=" "><i class="icon icon-color ion-social-github "></i></a>
+                </div>
+                <p class="copyright ">Angel Inc. 2025</p>
+            </footer>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
