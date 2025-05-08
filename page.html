@@ -28,42 +28,69 @@
 <body>
     <!-- Header -->
     <header class="fixed-header bg-white shadow-sm">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center py-3">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="img/inicio/logo.png" alt="Logo Sip&Go" style="height: 50px;">
-                    </a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <a href="carrito.html" class="btn btn-success me-2">
-                        <i class="fas fa-shopping-cart me-2"></i>Carrito
-                    </a>
-                    <a href="login.html" class="btn btn-outline-success">
-                        <i class="fas fa-user me-2"></i>Login
-                    </a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/inicio/logo.png" alt="Logo Sip&Go" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cerveza">Cervezas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#vino">Vinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#whisky">Whisky</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aguardiente">Aguardiente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#licores">Licores</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <a href="carrito.html" class="btn btn-success me-2">
+                            <i class="fas fa-shopping-cart me-2"></i>Carrito
+                        </a>
+                        <a href="login.html" class="btn btn-outline-success">
+                            <i class="fas fa-user me-2"></i>Login
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Main Content -->
     <main class="container" style="margin-top: 100px;">
-        <h1 class="text-center mb-5">Nuestras Categorías</h1>
+        <h1 class="text-center mb-5">Nuestros Productos</h1>
 
         <!-- Cerveza -->
         <section id="cerveza" class="mb-5">
             <div class="categoria-header bg-success text-white p-3 rounded mb-4">
-                <h2 class="m-0">Cerveza</h2>
+                <h2 class="m-0"><i class="fas fa-beer me-2"></i>Cervezas</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 <div class="col">
-                    <div class="card h-100">
+                    <div class="card h-100 product-card">
+                        <div class="position-absolute top-0 end-0 p-2">
+                            <span class="badge bg-danger">-10%</span>
+                        </div>
                         <img src="img/productos/poker.png" class="card-img-top p-3" alt="Poker">
                         <div class="card-body">
                             <h5 class="card-title">Poker</h5>
-                            <p class="card-text">Cerveza colombiana tradicional</p>
-                            <p class="card-text"><strong>Precio: $2.500</strong></p>
+                            <p class="card-text">Cerveza colombiana tradicional 330ml</p>
+                            <p class="card-text">
+                                <span class="text-decoration-line-through text-muted">$2.800</span>
+                                <strong class="ms-2 text-success">$2.500</strong>
+                            </p>
                             <button class="btn btn-success w-100" onclick="addToCart('Poker', 2500, 'img/productos/poker.png')">
                                 <i class="fas fa-cart-plus me-2"></i>Agregar al carrito
                             </button>
@@ -71,13 +98,42 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card h-100">
+                    <div class="card h-100 product-card">
                         <img src="img/productos/corona.png" class="card-img-top p-3" alt="Corona">
                         <div class="card-body">
-                            <h5 class="card-title">Corona</h5>
-                            <p class="card-text">Cerveza mexicana premium</p>
-                            <p class="card-text"><strong>Precio: $5.500</strong></p>
+                            <h5 class="card-title">Corona Extra</h5>
+                            <p class="card-text">Cerveza mexicana premium 355ml</p>
+                            <p class="card-text"><strong class="text-success">$5.500</strong></p>
                             <button class="btn btn-success w-100" onclick="addToCart('Corona', 5500, 'img/productos/corona.png')">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 product-card">
+                        <img src="img/productos/aguila.png" class="card-img-top p-3" alt="Aguila">
+                        <div class="card-body">
+                            <h5 class="card-title">Aguila Original</h5>
+                            <p class="card-text">Cerveza colombiana 330ml</p>
+                            <p class="card-text"><strong class="text-success">$2.800</strong></p>
+                            <button class="btn btn-success w-100" onclick="addToCart('Aguila', 2800, 'img/productos/aguila.png')">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 product-card">
+                        <div class="position-absolute top-0 end-0 p-2">
+                            <span class="badge bg-danger">Nuevo</span>
+                        </div>
+                        <img src="img/productos/budweiser.png" class="card-img-top p-3" alt="Budweiser">
+                        <div class="card-body">
+                            <h5 class="card-title">Budweiser</h5>
+                            <p class="card-text">Cerveza americana premium 355ml</p>
+                            <p class="card-text"><strong class="text-success">$4.500</strong></p>
+                            <button class="btn btn-success w-100" onclick="addToCart('Budweiser', 4500, 'img/productos/budweiser.png')">
                                 <i class="fas fa-cart-plus me-2"></i>Agregar al carrito
                             </button>
                         </div>
