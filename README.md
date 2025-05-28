@@ -69,7 +69,7 @@ Sip-Go/
 ├── templates/
 │   ├── index.html     # Página principal
 │   ├── login.html     # Página de login/registro
-│   ├── page.html      # Página de productos
+│   ├── categorias.html # Página de productos
 │   └── carrito.html   # Página del carrito
 └── README.md
 ```

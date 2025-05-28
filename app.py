@@ -3,13 +3,15 @@ from flask import Flask, request, jsonify, session  # Flask para el servidor web
 from flask_sqlalchemy import SQLAlchemy  # ORM para la base de datos
 from werkzeug.security import generate_password_hash, check_password_hash  # Funciones para hash de contraseñas
 from datetime import datetime  # Para manejar fechas
+import os
 
 # Inicialización de la aplicación Flask
 app = Flask(__name__)
 
 # Configuración de la aplicación
-app.config['SECRET_KEY'] = 'tu_clave_secreta_aqui'  # Clave secreta para sesiones
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'  # URL de la base de datos SQLite
+app.config['SECRET_KEY'] = 'clave_secreta_sipandgo_2025'  # Clave secreta para sesiones
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'users.db')  # URL de la base de datos SQLite
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Desactivar tracking de modificaciones de SQLAlchemy
 
 # Inicialización de la base de datos
@@ -59,15 +61,67 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         return jsonify({'message': 'Usuario registrado exitosamente'}), 201
-    except:
-        # Manejar cualquier error durante el registro
+    except Exception as e:
+        db.session.rollback()
         return jsonify({'error': 'Error al registrar usuario'}), 500
 
 # Ruta para iniciar sesión
 @app.route('/api/login', methods=['POST'])
 def login():
-    # Obtener datos del formulario en formato JSON
+    # Obtener datos del formulario
     data = request.get_json()
+
+    if not all(k in data for k in ('email', 'password')):
+        return jsonify({'error': 'Faltan datos requeridos'}), 400
+
+    # Buscar usuario por email
+    user = User.query.filter_by(email=data['email']).first()
+
+    # Verificar si el usuario existe y la contraseña es correcta
+    if user and check_password_hash(user.password, data['password']):
+        # Guardar usuario en sesión
+        session['user_id'] = user.id
+        return jsonify({
+            'message': 'Login exitoso',
+            'user': {
+                'id': user.id,
+                'nombre': user.nombre,
+                'email': user.email
+            }
+        }), 200
+    
+    return jsonify({'error': 'Email o contraseña incorrectos'}), 401
+
+# Ruta para cerrar sesión
+@app.route('/api/logout', methods=['POST'])
+def logout():
+    session.pop('user_id', None)
+    return jsonify({'message': 'Sesión cerrada exitosamente'}), 200
+
+# Ruta para verificar si el usuario está autenticado
+@app.route('/api/check-auth', methods=['GET'])
+def check_auth():
+    user_id = session.get('user_id')
+    if user_id:
+        user = User.query.get(user_id)
+        return jsonify({
+            'authenticated': True,
+            'user': {
+                'id': user.id,
+                'nombre': user.nombre,
+                'email': user.email
+            }
+        }), 200
+    return jsonify({'authenticated': False}), 401
+
+# Iniciar el servidor
+if __name__ == '__main__':
+    app.run(debug=True)
+
+# Ruta para iniciar sesión
+@app.route('/api/login', methods=['POST'])
+def login():
+    # Obtener datos del formulario en formato JSON    data = request.get_json()
 
     # Verificar que email y contraseña estén presentes
     if not all(k in data for k in ('email', 'password')):

@@ -1,3 +1,25 @@
+        /*
+         * Archivo: styles.css
+         * Descripción: Estilos globales para Sip&Go
+         * Contiene:
+         * - Estilos base (html, body, reset)
+         * - Estilos de navegación y header
+         * - Estilos para tarjetas de productos
+         * - Estilos para formularios y botones
+         * - Estilos para notificaciones y mensajes
+         * - Estilos específicos para cada página
+         * - Animaciones y transiciones
+         */
+
+        /* Estilos para la página principal */
+        #pageInicio {
+            padding-top: 100px;
+        }
+
+        #headerBarraSuperior {
+            margin-top: 0px;
+        }
+
         html {
             box-sizing: border-box;
             font-size: 62.5%;
@@ -815,6 +837,123 @@
             margin-bottom: 0.5rem;
         }
         
+        /* Estilos para la página de categorías */
+        #products-container.loading {
+            opacity: 0.6;
+        }
+
+        .nav-link.btn-link {
+            color: #6c757d;
+            transition: all 0.3s ease;
+            border: none;
+            background: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .nav-link.btn-link:hover {
+            color: #198754;
+            background-color: rgba(25, 135, 84, 0.1);
+        }
+
+        .nav-link.btn-link.active {
+            color: #fff;
+            background-color: #198754;
+        }
+
+        .add-to-cart-btn {
+            transition: all 0.2s ease;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-container {
+            font-size: 1.25rem;
+        }
+
+        /* Estilos para notificaciones */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: #198754;
+            color: white;
+            border-radius: 5px;
+            z-index: 1000;
+            animation: slideIn 0.5s ease;
+        }
+
+        .notification.success { background-color: #28a745; }
+        .notification.error { background-color: #dc3545; }
+        .notification.info { background-color: #17a2b8; }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Estilos para tarjetas de productos */
+        .product-card {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: contain;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .stock-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+        }
+
+        #products-container {
+            min-height: 400px;
+            transition: opacity 0.3s ease;
+        }
+
+        .cart-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* Estilos para el login */
+        .login .logo-img {
+            max-width: 200px;
+        }
+
         .card-text {
             color: #666;
             margin-bottom: 0.5rem;

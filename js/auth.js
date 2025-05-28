@@ -1,4 +1,17 @@
 // Esperar a que el DOM esté completamente cargado antes de ejecutar el código
+/**
+ * Archivo: auth.js
+ * Descripción: Manejo de la autenticación y registro de usuarios
+ * 
+ * Contiene:
+ * - Validación de formularios de login y registro
+ * - Manejo de envío de formularios
+ * - Gestión de mensajes de error
+ * - Redirección post-autenticación
+ * 
+
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
     // Obtener referencias a los formularios de login y registro
     const loginForm = document.getElementById('loginForm');
@@ -9,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', async function(e) {
             // Prevenir el comportamiento por defecto del formulario
             e.preventDefault();
-            
+
             // Recopilar datos del formulario de login
             const formData = {
                 email: this.querySelector('[name="email"]').value,
@@ -50,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         registerForm.addEventListener('submit', async function(e) {
             // Prevenir el comportamiento por defecto del formulario
             e.preventDefault();
-            
+
             // Recopilar datos del formulario de registro
             const formData = {
                 nombre: this.querySelector('[name="nombre"]').value,
@@ -88,4 +101,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
